@@ -35,7 +35,11 @@ tasks:
     command: |
       WelcomeFile='/workspace/GHCiCode/README.md'
       # gp open won't work until the IDE GUI is ready
-      until gp open ${WelcomeFile}; do sleep 1; done
+      until gp open ${WelcomeFile}; do
+        echo "Waiting IDE activated ..."
+        sleep 1
+      done
+      echo "Showing tutorial(s) ..."
       # Safe to open more files from now on
       gp open '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
 
