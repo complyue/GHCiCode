@@ -17,6 +17,8 @@ demo1 = do
   -- %% -- Showcase such a function from this GHCiCode package
   somePublicFunc
 
+  putStrLn "See that?"
+
   -- %%
   putStrLn "That's it, for now."
 
