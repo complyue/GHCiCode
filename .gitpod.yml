@@ -23,8 +23,6 @@ tasks:
       cabal update
       # refresh stack package index
       # stack update
-      # Need this tool to generate `hie.yaml`
-      cabal install implicit-hie
     # These will run each time a new Gitpod workspace is open
     command: |
       cabal update
@@ -33,9 +31,6 @@ tasks:
       ghcup upgrade
       # Show what's currently installed, and what's out there
       ghcup list
-      # `hie.yaml` is still needed for [Go to Definition] to work cross-components
-      cd /workspace/GHCiCode/
-      gen-hie > hie.yaml
   # Note this has to be the last task, or it can hang up
   - name: Open Welcome File(s)
     command: |
