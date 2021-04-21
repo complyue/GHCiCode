@@ -1,0 +1,94 @@
+cabal-version:      2.4
+name:               ghci-code
+version:            0.1.0.0
+license:            BSD-3-Clause
+copyright:          Compl Yue
+maintainer:         compl.yue@icloud.com
+author:             Compl Yue
+stability:          experimental
+homepage:           https://github.com/complyue/ghci-code
+bug-reports:        https://github.com/complyue/ghci-code/issues
+synopsis:           HaskIt Đ - Haskell Software, Fast Iterations
+description:
+  Demo for Interactive CodeLens to run in Integrated GHCi Sessions
+  Please see the README on Github at <https://github.com/complyue/ghci-code>
+
+category:           Software Engineering Development
+build-type:         Simple
+extra-source-files: README.md
+
+source-repository head
+  type:     git
+  location: https://github.com/complyue/ghci-code
+  subdir:   ghci-code
+
+executable ghci-code-tutor
+  hs-source-dirs:     tutor
+  main-is:            Main.hs
+  other-modules:      Tutor1
+  default-language:   Haskell2010
+  default-extensions:
+    NoImplicitPrelude
+    BangPatterns
+    ConstraintKinds
+    DataKinds
+    DerivingStrategies
+    FlexibleContexts
+    FlexibleInstances
+    GADTs
+    GeneralizedNewtypeDeriving
+    KindSignatures
+    LambdaCase
+    MultiWayIf
+    OverloadedStrings
+    PatternSynonyms
+    RankNTypes
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeApplications
+    TypeOperators
+    ViewPatterns
+
+  ghc-options:        -Wall -threaded -rtsopts
+  build-depends:
+    , base          >=4.12
+    , ghci-code
+    , mtl
+    , text
+    , transformers
+
+library
+  exposed-modules:    GHCiCode
+  other-modules:      GHCiCode.Internal
+  hs-source-dirs:     src
+  default-language:   Haskell2010
+  default-extensions:
+    NoImplicitPrelude
+    BangPatterns
+    ConstraintKinds
+    DataKinds
+    DerivingStrategies
+    FlexibleContexts
+    FlexibleInstances
+    GADTs
+    GeneralizedNewtypeDeriving
+    KindSignatures
+    LambdaCase
+    MultiWayIf
+    OverloadedStrings
+    PatternSynonyms
+    RankNTypes
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeApplications
+    TypeOperators
+    ViewPatterns
+
+  ghc-options:        -Wall
+  build-depends:
+    , base          >=4.12
+    , mtl
+    , text
+    , transformers

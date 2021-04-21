@@ -1,0 +1,6 @@
+{
+  "ghci.terminal.cmdl": [
+    "cabal repl ghci-code:exes",
+    "cabal repl ghci-code:libs"
+  ]
+}
