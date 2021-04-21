@@ -16,6 +16,9 @@ tasks:
       ghcup install ghc
       ghcup install cabal
       ghcup install hls
+      # set default versions
+      ghcup set ghc
+      ghcup set hls
       # refresh cabal package index
       cabal update
       # refresh stack package index
