@@ -3,6 +3,6 @@
     "cabal repl ghci-code:libs",
     "cabal repl ghci-code:exes",
     "stack ghci ghci-code:lib",
-    "stack ghci ghci-code:ghci-code-tutor"
+    "stack ghci ghci-code:exe:ghci-code-tutor"
   ]
 }
