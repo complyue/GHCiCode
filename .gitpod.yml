@@ -32,7 +32,11 @@ tasks:
       cabal update
       # stack update
       ghcup upgrade
+      # Show what's currently installed, and what's out there
       ghcup list
+      # Open welcome file(s)
+      code '/workspace/GHCiCode/README.md'
+      code '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
 
 vscode:
   extensions:
