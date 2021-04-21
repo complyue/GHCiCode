@@ -1,6 +1,8 @@
 {
   "ghci.terminal.cmdl": [
+    "cabal repl ghci-code:libs",
     "cabal repl ghci-code:exes",
-    "cabal repl ghci-code:libs"
+    "stack ghci ghci-code:lib",
+    "stack ghci ghci-code:ghci-code-tutor"
   ]
 }
