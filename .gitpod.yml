@@ -22,11 +22,11 @@ tasks:
       # refresh cabal package index
       cabal update
       # refresh stack package index
-      stack update
+      # stack update
     # These will run each time a new Gitpod workspace is open
     command: |
       cabal update
-      stack update
+      # stack update
       ghcup upgrade
       ghcup list
 
