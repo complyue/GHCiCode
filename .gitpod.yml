@@ -12,7 +12,7 @@ tasks:
             -o /workspace/.ghcup/bin/ghcup
       chmod a+x /workspace/.ghcup/bin/ghcup
       # install ghc/cabal-install via ghcup
-      # ghcup upgrade
+      ghcup upgrade
       ghcup install ghc
       ghcup install cabal
       # refresh cabal package index
