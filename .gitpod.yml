@@ -1,0 +1,23 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Build Haskell Tooling
+    init: |
+      # install ghc/cabal-install via ghcup
+      ghcup upgrade
+      ghcup install ghc
+      ghcup install cabal
+      # refresh cabal package index
+      cabal update
+      # refresh stack package index
+      stack update
+    command: |
+      cd /workspace/
+      gp open '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
+
+vscode:
+  extensions:
+    - justusadam.language-haskell
+    - haskell.haskell
+    - complyue.vscode-ghci
