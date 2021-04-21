@@ -2,7 +2,7 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: Build Haskell Tooling
+  - name: Setup Haskell Tooling
     init: |
       # ~/.ghcup will be lost across Gitpod workspace restarts,
       # install ghcup to /workspace/ so it is persisted as part of prebuilt workspace
@@ -24,6 +24,7 @@ tasks:
       # refresh stack package index
       stack update
     command: |
+      # Open the welcome file
       cd /workspace/
       gp open '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
 
