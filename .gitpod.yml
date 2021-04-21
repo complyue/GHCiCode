@@ -22,8 +22,10 @@ tasks:
       cabal update
       # refresh stack package index
       stack update
+
+  - name: Open Welcome File(s)
     command: |
-      # Open the welcome file(s)
+      gp open '/workspace/GHCiCode/README.md'
       gp open '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
 
 vscode:
