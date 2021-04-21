@@ -16,16 +16,14 @@ tasks:
       ghcup install ghc
       ghcup install cabal
       ghcup install hls
-      # set default versions
+      # set default version of GHC, or simple cmd like `ghci` and `cabal repl all` won't work
       ghcup set ghc
-      ghcup set hls
       # refresh cabal package index
       cabal update
       # refresh stack package index
       stack update
     command: |
-      # Open the welcome file
-      cd /workspace/
+      # Open the welcome file(s)
       gp open '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
 
 vscode:
