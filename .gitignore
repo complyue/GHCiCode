@@ -4,6 +4,7 @@
 *.swp
 
 # Haskell projects
+hie.yaml
 tarballs/
 .stack-work/
 stack.yaml.lock
