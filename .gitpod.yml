@@ -4,8 +4,8 @@ image:
 tasks:
   - name: Open Welcome File(s)
     command: |
-      gp open '/workspace/GHCiCode/README.md'
-      gp open '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
+      code '/workspace/GHCiCode/README.md'
+      code '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
   - name: Setup Haskell Tooling
     # These will run only for Gitpod workspace pre-building
     init: |
