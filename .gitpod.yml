@@ -1,6 +1,12 @@
 image:
   file: .gitpod.Dockerfile
 
+github:
+  # prebuilt workspaces have difficulties running task commands atm, disable it
+  prebuilds:
+    master: false
+    main: false
+
 tasks:
   - name: Setup Haskell Tooling
     # These will run only for Gitpod workspace pre-building
