@@ -5,10 +5,10 @@ USER gitpod
 # or git will keep prompting
 RUN git config --global pull.ff only
 
-# ~/.ghcup will be lost across Gitpod workspace restarts,
+# ~/.cabal and ~/.ghcup will be lost across Gitpod workspace restarts,
 # ghcup to be installed to /workspace/ so it is persisted as part of prebuilt
-# workspace, we add its bin to PATH here
-ENV PATH="/workspace/.ghcup/bin:${PATH}"
+# workspace, we add their bin to PATH here
+ENV PATH="/workspace/.cabal/bin:/workspace/.ghcup/bin:${PATH}"
 
 # ~/.cabal and ~/.stack will be lost across Gitpod workspace restarts,
 # use /workspace/ so it is persisted as part of prebuilt workspace
