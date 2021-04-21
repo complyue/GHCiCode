@@ -2,13 +2,6 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: Open Welcome File(s)
-    command: |
-      WelcomeFile='/workspace/GHCiCode/README.md'
-      # gp open won't work until the IDE GUI is ready
-      until gp open ${WelcomeFile}; do sleep 1; done
-      # Safe to open more files from now on
-      gp open '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
   - name: Setup Haskell Tooling
     # These will run only for Gitpod workspace pre-building
     init: |
@@ -37,6 +30,14 @@ tasks:
       ghcup upgrade
       # Show what's currently installed, and what's out there
       ghcup list
+  # Note this has to be the last task, or it can hang up
+  - name: Open Welcome File(s)
+    command: |
+      WelcomeFile='/workspace/GHCiCode/README.md'
+      # gp open won't work until the IDE GUI is ready
+      until gp open ${WelcomeFile}; do sleep 1; done
+      # Safe to open more files from now on
+      gp open '/workspace/GHCiCode/ghci-code/tutor/Tutor1.hs'
 
 vscode:
   extensions:
