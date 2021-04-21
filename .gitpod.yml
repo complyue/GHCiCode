@@ -9,8 +9,10 @@ github:
 
 tasks:
   - name: Setup Haskell Tooling
+    # Put all in a single command list until Gitpod workspace prebuilding works again
+    command: |
     # These will run only for Gitpod workspace pre-building
-    init: |
+    # init: |
       # ~/.ghcup will be lost across Gitpod workspace restarts,
       # install ghcup to /workspace/ so it is persisted as part of prebuilt workspace
       # Note `/workspace/.ghcup/bin` should have been added to PATH in Dockerfile
@@ -30,7 +32,7 @@ tasks:
       # refresh stack package index
       # stack update
     # These will run each time a new Gitpod workspace is open
-    command: |
+    # command: |
       cabal update
       # stack update
       ghcup upgrade
