@@ -4,8 +4,15 @@ image:
 tasks:
   - name: Build Haskell Tooling
     init: |
+      # ~/.ghcup will be lost across Gitpod workspace restarts,
+      # install ghcup to /workspace/ so it is persisted as part of prebuilt workspace
+      # Note `/workspace/.ghcup/bin` should have been added to PATH in Dockerfile
+      mkdir -p /workspace/.ghcup/bin
+      curl -sSL https://downloads.haskell.org/~ghcup/x86_64-linux-ghcup \
+            -o /workspace/.ghcup/bin/ghcup
+      chmod a+x /workspace/.ghcup/bin/ghcup
       # install ghc/cabal-install via ghcup
-      ghcup upgrade
+      # ghcup upgrade
       ghcup install ghc
       ghcup install cabal
       # refresh cabal package index
