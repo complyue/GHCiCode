@@ -13,7 +13,7 @@ RUN git config --global pull.ff only
 # `bin`s to PATH here
 ENV PATH="/workspace/.local/bin:/workspace/.cabal/bin:/workspace/.ghcup/bin:${PATH}"
 
-# And tell those tools about their alternative homes
+# And tell those tools the alternative home they should live in
 ENV GHCUP_INSTALL_BASE_PREFIX=/workspace
 ENV CABAL_DIR=/workspace/.cabal
 ENV STACK_ROOT=/workspace/.stack
