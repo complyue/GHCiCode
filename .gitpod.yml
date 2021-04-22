@@ -9,18 +9,21 @@ tasks:
       # ~/.ghcup will be lost across Gitpod workspace restarts,
       # install ghcup to /workspace/ so it is persisted as part of prebuilt workspace
       # Note `/workspace/.ghcup/bin` should have been added to PATH in Dockerfile
-      mkdir -p /workspace/.ghcup/bin
+      mkdir -p /workspace/.ghcup/bin || true
       curl -sSL https://downloads.haskell.org/~ghcup/x86_64-linux-ghcup \
             -o /workspace/.ghcup/bin/ghcup
       chmod a+x /workspace/.ghcup/bin/ghcup
-      # install ghc/cabal-install via ghcup
+      # Install ghc/cabal-install/hls via ghcup
       ghcup upgrade
       ghcup install ghc
+      # It should has been told ENV CABAL_DIR=/workspace/.cabal in Dockerfile
+      # Also `/workspace/.cabal/bin` should have been added to PATH in Dockerfile
       ghcup install cabal
       ghcup install hls
       # set default version of GHC, or simple cmd like `ghci` and `cabal repl all` won't work
       ghcup set ghc
-      # Install stack
+      # Install stack to /workspace/
+      # Note `/workspace/.local/bin` should have been added to PATH in Dockerfile
       mkdir -p /workspace/.local/bin || true
       curl -sSL https://get.haskellstack.org/stable/linux-x86_64.tar.gz | \
         tar -xzf - \

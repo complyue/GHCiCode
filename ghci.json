@@ -4,5 +4,9 @@
     "cabal repl ghci-code:exes",
     "stack ghci ghci-code:lib",
     "stack ghci ghci-code:exe:ghci-code-tutor"
+  ],
+  "comments": [
+    "Note you'll need to run `stack build` manually before any `stack ghci`",
+    "session to be brought up, or it may fail, as up to stack v2.5.1"
   ]
 }
