@@ -20,8 +20,6 @@ tasks:
       ghcup install hls
       # set default version of GHC, or simple cmd like `ghci` and `cabal repl all` won't work
       ghcup set ghc
-      # Refresh cabal package index
-      cabal update
       # Install stack
       mkdir -p /workspace/.local/bin || true
       curl -sSL https://get.haskellstack.org/stable/linux-x86_64.tar.gz | \
@@ -30,6 +28,8 @@ tasks:
 
     # These will run each time a new Gitpod workspace is open
     command: |
+      # Refresh cabal package index
+      cabal update
       # Keep ghcup up-to-date
       ghcup upgrade
       # Show what's currently installed, and what's out there
@@ -39,7 +39,7 @@ tasks:
   # initially, it can reduce the chance for the IDE to hang up on open
   - name: Open Welcome File(s)
     command: |
-      # We have to wait IDE ready anyway, a perfect moment to update stack
+      # We have to wait IDE ready anyway, a perfect moment to refresh stack
       # package index now
       stack update
       # Note `gp open` will fail until the IDE is up and ready, VSCode takes
