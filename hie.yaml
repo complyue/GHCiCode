@@ -1,0 +1,5 @@
+cradle:
+  # Explicitly state we want hls to use cabal instead of stack
+  cabal:
+  # The other way around is also doable, but mind to keep one of them commented out
+  # stack:
