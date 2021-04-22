@@ -6,6 +6,8 @@
 
 A single click on above badge can spin up a full fledged Cloud IDE for modern Haskell software development, that's much more than enough to take just simple tutorials.
 
+![0-home-page](https://user-images.githubusercontent.com/15646573/115717628-efee3400-a3ac-11eb-9d6a-ef6ee36d6cb6.png)
+
 ## This is just a template
 
 This is a project template for interactive Haskell tutorials that a reader can click through some `.hs` source files, tinker with each piece of snippets to see & feel how they can make a difference.
