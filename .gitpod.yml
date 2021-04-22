@@ -3,6 +3,7 @@ image:
 
 tasks:
   - name: Setup Haskell Tooling
+
     # These will run only for Gitpod workspace pre-building
     init: |
       # ~/.ghcup will be lost across Gitpod workspace restarts,
@@ -19,21 +20,30 @@ tasks:
       ghcup install hls
       # set default version of GHC, or simple cmd like `ghci` and `cabal repl all` won't work
       ghcup set ghc
-      # refresh cabal package index
+      # Refresh cabal package index
       cabal update
-      # refresh stack package index
-      # stack update
+      # Install stack
+      mkdir -p /workspace/.local/bin || true
+      curl -sSL https://get.haskellstack.org/stable/linux-x86_64.tar.gz | \
+        tar -xzf - \
+          --strip-components=1 -C /workspace/.local/bin --wildcards '*/stack'
+
     # These will run each time a new Gitpod workspace is open
     command: |
-      cabal update
-      # stack update
       # Keep ghcup up-to-date
       ghcup upgrade
       # Show what's currently installed, and what's out there
       ghcup list
-  # Note this has to be the last task, or it can hang up
+
+  # Note this has to be the last task to make its terminal session shown
+  # initially, it can reduce the chance for the IDE to hang up on open
   - name: Open Welcome File(s)
     command: |
+      # We have to wait IDE ready anyway, a perfect moment to update stack
+      # package index now
+      stack update
+      # Note `gp open` will fail until the IDE is up and ready, VSCode takes
+      # more time than Theia as time being, keep attempting until success
       WelcomeFile='/workspace/GHCiCode/README.md'
       # gp open won't work until the IDE GUI is ready
       until gp open ${WelcomeFile}; do

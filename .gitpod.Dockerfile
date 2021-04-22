@@ -5,18 +5,15 @@ USER gitpod
 # or git will keep prompting
 RUN git config --global pull.ff only
 
-# ~/.ghcup and ~/.cabal will be lost across Gitpod workspace restarts,
-# ghcup to be installed to /workspace/ so it is persisted as part of prebuilt
-# workspace, we add their bin to PATH here
-ENV GHCUP_INSTALL_BASE_PREFIX=/workspace
-ENV PATH="/workspace/.cabal/bin:/workspace/.ghcup/bin:${PATH}"
+# ~/.ghcup and ~/.cabal as well as all stuff under user ${HOME} directory will,
+# get lost across Gitpod workspace restarts,
+# ghcup (along with GHC, cabal-install and els etc. under its management) and
+# stack should be installed to /workspace/ so they are persisted as part of
+# prebuilt workspace, and updatable without root priviledge, we add their
+# `bin`s to PATH here
+ENV PATH="/workspace/.local/bin:/workspace/.cabal/bin:/workspace/.ghcup/bin:${PATH}"
 
-# ~/.cabal and ~/.stack will be lost across Gitpod workspace restarts,
-# use /workspace/ so it is persisted as part of prebuilt workspace
+# And tell those tools about their alternative homes
+ENV GHCUP_INSTALL_BASE_PREFIX=/workspace
 ENV CABAL_DIR=/workspace/.cabal
 ENV STACK_ROOT=/workspace/.stack
-
-USER root
-
-# install haskell stack
-RUN curl -sSL https://get.haskellstack.org/ | sh
