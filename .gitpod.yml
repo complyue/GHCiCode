@@ -28,6 +28,11 @@ tasks:
       curl -sSL https://get.haskellstack.org/stable/linux-x86_64.tar.gz | \
         tar -xzf - \
           --strip-components=1 -C /workspace/.local/bin --wildcards '*/stack'
+      # In case stack would be used, you want to setup GHC and other things for
+      # the project right now. Or hls will race to do similar things on IDE
+      # startup, which tends to corrupt things with unstable network connection.
+      cd /workspace/GHCiCode
+      stack setup
 
     # These will run each time a new Gitpod workspace is open
     command: |
