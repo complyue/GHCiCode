@@ -2,7 +2,7 @@
 
 ## Not long, yet don't read
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/complyue/GHCiCode)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/complyue/GHCiCode/blob/master/ghci-code/tutor/Tutor1.hs)
 
 A single click on above badge can spin up a full fledged Cloud IDE for modern Haskell software development, that's much more than enough to take just simple tutorials.
 
