@@ -47,6 +47,7 @@ executable ghci-code-tutor
     StandaloneDeriving
     TupleSections
     TypeApplications
+    AllowAmbiguousTypes
     TypeOperators
     ViewPatterns
 
@@ -83,6 +84,7 @@ library
     StandaloneDeriving
     TupleSections
     TypeApplications
+    AllowAmbiguousTypes
     TypeOperators
     ViewPatterns
 
